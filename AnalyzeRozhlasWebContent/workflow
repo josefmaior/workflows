@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# TODO: Write the script documentation comment!
+#
+
 TODAY=$(date +%Y-%m-%d)
 root_folder=`pwd`
 
