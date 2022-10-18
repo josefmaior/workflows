@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
 # TODO: Write the script documentation comment!
@@ -27,8 +27,8 @@ function run_graphing () {
 	pidof Xvfb && echo "Xvfb already started" || Xvfb :99 &
 	export DISPLAY=:99
 	cd $1/graphEntities/ && /root/bin/pp
-	
-	echo "run_graphing: ran Ok"	
+
+	echo "run_graphing: ran Ok"
 	return 0
 }
 
@@ -39,7 +39,7 @@ function copy_and_commit_graphs_gh () {
 	git add .
 	git commit -am "Graphs update `date`"
 	git pull
-	git push 
+	git push
 
 	echo "copy_and_commit_gh: ran Ok"
 	return 0
@@ -57,7 +57,7 @@ function commit_data_gh () {
 }
 
 function run_batch_analysis_geneea () {
-	
+
 	source /root/irozhlas/cro-geneea-sdk2/.venv/bin/activate
 	source /root/irozhlas/cro-geneea-sdk2/secret
 
@@ -81,17 +81,17 @@ function move_results () {
 	mkdir /root/irozhlas-scraper-geneea-output/html/$1
 
 	for i in `ls /root/irozhlas/irozhlas-scraper/output/$1*.txt`; do
-		cp -ar $i /root/irozhlas-scraper-geneea-output/txt/$1 
+		cp -ar $i /root/irozhlas-scraper-geneea-output/txt/$1
 	done
 
 	for i in `ls /root/irozhlas/irozhlas-scraper/output/xml/$1*.xml`; do
-		cp -ar $i /root/irozhlas-scraper-geneea-output/xml/$1 
+		cp -ar $i /root/irozhlas-scraper-geneea-output/xml/$1
 	done
 
 	for i in `find /root/irozhlas/irozhlas-scraper/*.html -newermt $(date +%Y-%m-%d -d '1 day ago') -type f -print`; do
-		cp -ar $i /root/irozhlas-scraper-geneea-output/html/$1 
+		cp -ar $i /root/irozhlas-scraper-geneea-output/html/$1
 	done
-	
+
 	echo "move_results: ran Ok"
 	return 0
 }
