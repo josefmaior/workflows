@@ -1,36 +1,8 @@
 #!/usr/bin/env bash
 
 #
-# DESCRIPTION
+# Run the 1) `arrange-openmedia-data` and 2) `extract-openmedia.data` scripts.
 #
 
-YEAR=`date +%Y`
-WEEK=`date +%V`
-
-echo "The week ${YEAR}/${WEEK}."
-
-echo "Pulling czech-radio/openmedia."
-git pull --rebase origin main
-
-echo "Activating virtual environment."
-source ./root/venv/bin/activate
-
-echo "Updating czech-radio/openmedia."
-pip install -U /root/bin/openmedia
-
-echo "Waiting for a while, you can cancel operation with CTRL+C."
-sleep 1m
-
-echo "Runing cro-openmedia-arrange command."
-cro-openmedia-arrange --input ${ANNOVA}
-
-echo "Sleeping for 30 minutes because above is non-blocking."
-sleep 30m
-
-echo "Runing cro-openmedia-extract command."
-cro-openmedia-extract -i "${ANNOVA}/$YEAR}/W${WEEK}" -o "/mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/${YEAR}"
-
-echo "Deactivating virtual environment."
-deactivate
-
-echo "[--OK--]"
+source ./arrange-openmedia-data
+source ./extract-openmedia-data

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 #
-# DESCRIPTION
-# Source the .env file before running!
+# Backup the respondent PostgreSQL database.
+#
+# .. note:: Source the .env file before running!
 #
 
 DATE=`date +%Y-%m-%d`
@@ -15,5 +16,3 @@ pg_dump --file "/root/backups/aura_${DATE}.dump" \
 --no-privileges $AURA_DB_NAME
 
 #/usr/bin/pg_restore -U demodb --no-password -f "aura_$DATE.dump"
-
-echo "[--OK--]"
