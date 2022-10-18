@@ -2,9 +2,9 @@
 
 # Set and source the .env file before running!
 
-DATE=`date +%d_%m_%y`
+DATE=`date date +%Y-%m-%d`
 
-pg_dump --file "aura_$DATE.dump" \
+pg_dump --file "./backups/aura_$DATE.dump" \
 --host $AURA_DB_HOST \
 --port $AURA_DB_PORT \
 --username $AURA_DB_USER \
