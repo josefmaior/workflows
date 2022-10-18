@@ -1,4 +1,4 @@
-# workflows
+# Workflows
 
 Zde se nachází programy/skripty a dokumentace **automatizovaných** business procesů (*workflows*/*pipelines*), důležitých pro chod oddělení. Každé worflow může náležet k jednomu či více business procesům viz naše [znalostní báze](https://github.com/czech-radio/organization/tree/main/docs/Software/Processes).
 
