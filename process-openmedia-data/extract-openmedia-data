@@ -22,7 +22,7 @@ echo "Waiting for 1 minute, you can cancel operation with CTRL+C."
 sleep 1m
 
 echo "Runing cro-openmedia-extract command."
-cro-openmedia-extract -i "${ANNOVA}/Rundowns/${YEAR}/W${WEEK}" -o "/mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/${YEAR}"
+cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o /mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/${YEAR}
 
 echo "Deactivating virtual environment."
 deactivate
