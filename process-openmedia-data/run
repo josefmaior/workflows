@@ -1,32 +1,36 @@
 #!/usr/bin/env bash
 
 #
-# TODO: Write the script documentation comment!
+# DESCRIPTION
 #
 
+YEAR=`date +%Y`
 WEEK=`date +%V`
 
-echo WEEKNUMBER $WEEK
+echo "The week ${YEAR}/${WEEK}."
 
-echo Updating source
-git pull --rebase
+echo "Pulling czech-radio/openmedia."
+git pull --rebase origin main
 
-echo sourcing .venv
+echo "Activating virtual environment."
 source .venv/bin/activate
 
-echo Updating cro-rundown
+echo "Updating czech-radio/openmedia."
 pip install -U .
 
-echo Waiting for a while, you can cancel operation CTRL+C
+echo "Waiting for a while, you can cancel operation with CTRL+C."
 sleep 1m
 
-echo Runing arrange
+echo "Runing cro-openmedia-arrange command."
 cro-openmedia-arrange --input /mnt/cro.cz/annova/export-avo
 
-#process above is non-blocking, need to sleep here:
+echo "Sleeping for 30 minutes because above is non-blocking."
 sleep 30m
 
-echo Runing extract
-cro-openmedia-extract -i /mnt/cro.cz/annova/export-avo/2022/W$WEEK -o /mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/2022/
+echo "Runing cro-openmedia-extract command."
+cro-openmedia-extract -i "/mnt/cro.cz/annova/export-avo/$YEAR}/W${WEEK}" -o "/mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/${YEAR}"
 
+echo "Deactivating virtual environment."
 deactivate
+
+echo "[--OK--]"

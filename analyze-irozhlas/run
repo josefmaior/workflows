@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# TODO: Write the script documentation comment!
+# DESCRIPTION
 #
 
 TODAY=$(date +%Y-%m-%d)
@@ -96,13 +96,14 @@ function move_results () {
 	return 0
 }
 
-
 # Run analysis
 run_batch_analysis_geneea $TODAY || (echo "run_batch_analysis_genee: Failed" && exit 1)
 move_results $TODAY || (echo "move_results: Failed" && exit 1)
 dump_all_xmls_and_sort_by_entity_repeat_count $root_folder/xml || (echo "dump_all_xmls_and_sort_by_entity_repeat_count Failed" && exit 1)
+
 # Run graphs
 run_graphing $root_folder || (echo "run_graphing: Failed" && exit 1)
+
 # GH Commit
 commit_data_gh || (echo "commit_data_gh: Failed" && exit 1)
 copy_and_commit_graphs_gh $root_folder || (echo "copy_and_commit_graphs_gh: Failed" && exit 1)

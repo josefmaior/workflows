@@ -8,12 +8,20 @@ Zde se nachází programy/skripty a dokumentace **automatizovaných** business p
 - Každé workflow je dokumentováno v `README.md`.
 - Každé workfow obsahuje vstupní skript pojmenovaný `run` (Bash, Python atd.).
 
+
+Jak to vypadá ve Visual Studio code?
+
+![screen](screen.png)
+
 ## Workflows
 
 - [analyze-irozhlas](https://github.com/czech-radio/workflows/tree/main/analyze-irozhlas)
 - [backup-respondent-db](https://github.com/czech-radio/workflows/tree/main/backup-respondent-db)
 - [process-openmedia-data](https://github.com/czech-radio/workflows/tree/main/process-openmedia-data)
 
-Jak to vypadá ve Visual Studio code?
 
-![screen](screen.png)
+Jak je spustíme na serveru?
+
+```bash
+source workflows/backup-respondent-db/run
+```

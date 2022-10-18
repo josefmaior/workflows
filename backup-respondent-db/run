@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+#
+# DESCRIPTION
 # Source the .env file before running!
+#
 
 DATE=`date +%Y-%m-%d`
 
