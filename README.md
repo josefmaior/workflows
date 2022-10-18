@@ -1,16 +1,15 @@
 # Workflows
 
-Zde se nachází programy/skripty a dokumentace **automatizovaných** *workflows* (*pipelines*), důležitých pro chod daných procesů.   
-Každé worflow může náležet k jednomu čí více procesům viz https://github.com/czech-radio/organization/tree/main/docs/Software/Processes 
+Zde se nachází programy/skripty a dokumentace **automatizovaných** business procesů (*workflows*/*pipelines*), důležitých pro chod oddělení. Každé worflow může náležet k jednomu čí více business procesům viz https://github.com/czech-radio/organization/tree/main/docs/Software/Processes
 
-## Postup
+## Přidání nového workflow
 
-- Každé workflow je umístěno ve vhodně pojmenaném adresáři (Použij imperativ např. `DoThis`).
+- Každé workflow je umístěno ve vhodně pojmenaném adresáři (Použij imperativ např. `do-this`).
 - Každé workflow je dokumentováno v `README.md`.
-- Každé workfow obsahuje vstupní skript pojmenovaný `worflow` (Bash, Python atd.).
+- Každé workfow obsahuje vstupní skript pojmenovaný `run` (Bash, Python atd.).
 
-## Workflow
+## Workflows
 
-- [Manage Rundown Files](https://github.com/czech-radio/workflows/tree/main/ManageRundownFiles)
-- [Backup Respondent Database](https://github.com/czech-radio/workflows/tree/main/BackupRespondentDatabase)
-- [Analyze Rozhlas Web Content](https://github.com/czech-radio/workflows/tree/main/AnalyzeRozhlasWebContent)
+- [analyze-irozhlas](https://github.com/czech-radio/workflows/tree/main/analyze-irozhlas)
+- [backup-respondent-db](https://github.com/czech-radio/workflows/tree/main/backup-respondent-db)
+- [process-openmedia-data](https://github.com/czech-radio/workflows/tree/main/process-openmedia-data)

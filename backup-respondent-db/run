@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Set and source the .env file before running!
+
+DATE=`date +%d_%m_%y`
+
+pg_dump --file "aura_$DATE.dump" \
+--host $AURA_DB_HOST \
+--port $AURA_DB_PORT \
+--username $AURA_DB_USER \
+--no-password --verbose --format=c --blobs --no-owner \
+--no-privileges $AURA_DB_NAME
+
+#/usr/bin/pg_restore -U demodb --no-password -f "aura_$DATE.dump"
