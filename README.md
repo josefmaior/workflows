@@ -13,3 +13,7 @@ Zde se nachází programy/skripty a dokumentace **automatizovaných** business p
 - [analyze-irozhlas](https://github.com/czech-radio/workflows/tree/main/analyze-irozhlas)
 - [backup-respondent-db](https://github.com/czech-radio/workflows/tree/main/backup-respondent-db)
 - [process-openmedia-data](https://github.com/czech-radio/workflows/tree/main/process-openmedia-data)
+
+Jak to vypadá ve Visual Studio code?
+
+![screen](screen.png)
