@@ -13,7 +13,7 @@ echo "Pulling czech-radio/openmedia."
 git pull --rebase origin main
 
 echo "Activating virtual environment."
-source ./root/.venv/bin/activate
+source /root/.venv/bin/activate
 
 echo "Updating czech-radio/openmedia."
 pip install -U /root/bin/openmedia
