@@ -8,7 +8,7 @@ Zde se nachází programy/skripty a dokumentace **automatizovaných** business p
 - Každé workflow je dokumentováno v `README.md`.
 - Každé workfow obsahuje vstupní skript pojmenovaný `run` (Bash, Python atd.).
 
-Jak to vypadá ve Visual Studio code?
+Jak to vypadá struktura projektu (Visual Studio Code)?
 
 ![screen](screen.png)
 
