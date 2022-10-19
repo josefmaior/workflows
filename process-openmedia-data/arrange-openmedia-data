@@ -12,11 +12,11 @@ if [[ ${ANNOVA} -eq 0 ]];
     then exit ;
 fi
 
-# Set varibles for direcotry path construction.
+# Set varibles for directory path construction.
 YEAR=`date +%Y` # The current year.
 WEEK=`date +%V` # The current week (number).
 
-echo "The week ${YEAR}/${WEEK}."
+echo "The year/week path is ${YEAR}/${WEEK}."
 
 # Update programs to latest version.
 echo "Pulling czech-radio/openmedia."
