@@ -17,7 +17,7 @@ set -e
 echo "Set and check environment"
 echo "========================="
 
-if [[ -n ${ANNOVA} ]]; then
+if [[ "${ANNOVA}" ]]; then
     echo "Variable ANNOVA is not set";
     exit 1
 fi
