@@ -12,6 +12,8 @@
 # PARAMETERS: NONE
 #
 
+set -e
+
 echo "Set and check environment"
 echo "========================="
 
