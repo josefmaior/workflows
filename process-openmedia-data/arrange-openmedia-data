@@ -19,7 +19,7 @@ echo "========================="
 
 if [[ ${ANNOVA} -eq 0 ]]; then
     echo "Variable ANNOVA is not set" 1>&2
-    exit 1
+    return 1
 fi
 
 # Set variables for directory path construction.
