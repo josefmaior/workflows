@@ -3,6 +3,14 @@
 #
 # Run the `cro-openmedia-arrange` command.
 #
+# Required environment variables:
+# $ANNOVA: The path to exported OpenMedia files
+#
+
+if [[ ${ANNOVA} -eq 0 ]];
+    echo "Variable ANNOVA is not set";
+    then exit ;
+fi
 
 # Set varibles for direcotry path construction.
 YEAR=`date +%Y` # The current year.
@@ -19,9 +27,6 @@ source /root/.venv/bin/activate
 
 echo "Updating czech-radio/openmedia."
 pip install -U /root/bin/openmedia
-
-# Set the environment variables.
-source /root/.env
 
 # Run the programs.
 echo "Runing cro-openmedia-arrange command."
