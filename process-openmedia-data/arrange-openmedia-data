@@ -4,11 +4,13 @@
 # Run the `cro-openmedia-arrange` command.
 #
 
-YEAR=`date +%Y`
-WEEK=`date +%V`
+# Set varibles for direcotry path construction.
+YEAR=`date +%Y` # The current year.
+WEEK=`date +%V` # The current week (number).
 
 echo "The week ${YEAR}/${WEEK}."
 
+# Update programs to latest version.
 echo "Pulling czech-radio/openmedia."
 git pull --rebase origin main
 
@@ -18,11 +20,15 @@ source /root/.venv/bin/activate
 echo "Updating czech-radio/openmedia."
 pip install -U /root/bin/openmedia
 
-echo "Waiting for 1 minute, you can cancel operation with CTRL+C."
-sleep 1m
+# Set the environment variables.
+source /root/.env
 
+# Run the programs.
 echo "Runing cro-openmedia-arrange command."
 cro-openmedia-arrange --input ${ANNOVA}
 
+# Clean up and exit.
 echo "Deactivating virtual environment."
 deactivate
+
+exit 0
