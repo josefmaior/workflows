@@ -17,10 +17,10 @@ set -e
 echo "Set and check environment"
 echo "========================="
 
-# if [[ -n $ANNOVA ]]; then
-#     echo "Variable ANNOVA is not set";
-#     exit 1
-# fi
+if [[ -n ${ANNOVA} ]]; then
+    echo "Variable ANNOVA is not set";
+    exit 1
+fi
 
 # Set variables for directory path construction.
 
