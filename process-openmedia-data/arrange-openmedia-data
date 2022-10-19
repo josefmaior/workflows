@@ -39,7 +39,7 @@ echo "Activate the virtual environment."
 source /root/.venv/bin/activate
 
 echo "Update czech-radio/openmedia."
-pip install -U /root/bin/openmedia
+pip install --quiet -U /root/bin/openmedia
 
 echo "Run the programs"
 echo "================"
