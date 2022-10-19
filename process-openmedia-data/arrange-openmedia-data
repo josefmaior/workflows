@@ -1,39 +1,53 @@
 #!/usr/bin/env bash
 
+# NAME:
+# arrange-openmedia-data
 #
+# DESCRIPTION:
 # Run the `cro-openmedia-arrange` command.
 #
-# Required environment variables:
+# ENVIRONMENT:
 # $ANNOVA: The path to exported OpenMedia files
 #
+# PARAMETERS: NONE
+#
+
+echo "Set and check environment"
+echo "========================="
 
 if [[ ${ANNOVA} -eq 0 ]];
     echo "Variable ANNOVA is not set";
     then exit ;
 fi
 
-# Set varibles for directory path construction.
+# Set variables for directory path construction.
 YEAR=`date +%Y` # The current year.
 WEEK=`date +%V` # The current week (number).
 
 echo "The year/week path is ${YEAR}/${WEEK}."
 
-# Update programs to latest version.
-echo "Pulling czech-radio/openmedia."
-git pull --rebase origin main
+echo "Update programs to latest version"
+echo "================================="
 
-echo "Activating virtual environment."
+echo "Pull czech-radio/openmedia."
+git --git-dir /root/bin/openmedia/.git pull origin main
+
+echo "Activate the virtual environment."
 source /root/.venv/bin/activate
 
-echo "Updating czech-radio/openmedia."
+echo "Update czech-radio/openmedia."
 pip install -U /root/bin/openmedia
 
-# Run the programs.
-echo "Runing cro-openmedia-arrange command."
+echo "Run the programs"
+echo "================"
+
+echo "Run cro-openmedia-arrange command."
 cro-openmedia-arrange --input ${ANNOVA}
 
-# Clean up and exit.
-echo "Deactivating virtual environment."
+echo "Clean up and exit"
+echo "================="
+
+echo "Deactivate the virtual environment."
 deactivate
 
 exit 0
