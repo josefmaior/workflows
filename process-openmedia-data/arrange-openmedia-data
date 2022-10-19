@@ -23,10 +23,11 @@ if [[ -n $ANNOVA ]]; then
 fi
 
 # Set variables for directory path construction.
+
 YEAR=`date +%Y` # The current year.
 WEEK=`date +%V` # The current week (number).
 
-echo "The year/week path is ${YEAR}/${WEEK}."
+echo "The year/week path is ${YEAR} and ${WEEK}."
 
 echo "Update programs to latest version"
 echo "================================="
