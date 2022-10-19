@@ -17,7 +17,7 @@ echo "========================="
 
 if [[ ${ANNOVA} -eq 0 ]];
     echo "Variable ANNOVA is not set";
-    then exit ;
+    then 1;
 fi
 
 # Set variables for directory path construction.
@@ -50,4 +50,4 @@ echo "================="
 echo "Deactivate the virtual environment."
 deactivate
 
-exit 0
+0
