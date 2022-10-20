@@ -8,6 +8,10 @@ Here you can find programs/scripts and documentation of automated business proce
 - Each workflow is well documented in source and `README.md`.
 - Each workflow contains an input script named `run` (Bash, Python, etc.).
 
+## Test workflow
+
+FIXME: The workflow testing strategy MUST be defined! 
+
 ## What does the project structure look like?
 
 (Visual Studio Code)
