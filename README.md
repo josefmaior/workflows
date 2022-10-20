@@ -19,12 +19,19 @@ FIXME: The workflow testing strategy MUST be defined!
 
 ## How do we run them on the server?
 
+### Episodic (manual) execution
+
 ```bash
 source workflows/backup-respondent-db/run
 ```
+
+### Periodic (automated) execution
+
+We use [cron](https://crontab.guru/)! 
 
 ## How do we update the workflow on the server?
 
 ```bash
 cd workflows && git pull && cd ..
 ```
+
