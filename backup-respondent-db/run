@@ -6,6 +6,8 @@
 # .. note:: Source the .env file before running!
 #
 
+source /root/.env
+
 DATE=`date +%Y-%m-%d`
 
 pg_dump --file "/root/backups/aura_${DATE}.dump" \
