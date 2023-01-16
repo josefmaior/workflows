@@ -1,7 +1,8 @@
 #!/bin/bash
 
+source /root/.env
 
-filename=openmedia_stat_`date +%Y-%m-%d`.tsv
+filename=$LOGS_FOLDER/process-openmedia-data/stat_openmedia_data_`date +%Y-%m-%d`.tsv
 
 function statFolder () {
 	if [ -d $1 ]; then
@@ -21,14 +22,12 @@ function statYear () {
   for i in $ANNOVA/Rundowns/$1/*; do
     folder_stat=`statFolder $i $1`
     echo $i $folder_stat
-    echo "$folder_stat" >> $filename
+    echo "$folder_stat" > $filename
   done
 
 }
 
 printf "year\tweek\tcount\tcount_mon\tcount_tue\tcount_wed\tcount_thu\tcount_fri\tcount_sat\tcount_sun\n" > $filename
-
-
 
 statYear 2020
 statYear 2021
