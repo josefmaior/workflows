@@ -19,7 +19,7 @@ FIXME: The workflow testing strategy MUST be defined!
 ### Episodic (manual) execution
 
 ```bash
-source workflows/backup-respondent-db/run
+sh workflows/backup-respondent-db/run
 ```
 
 ### Periodic (automated) execution
