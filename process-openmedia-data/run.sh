@@ -13,7 +13,7 @@ git push
 popd
 
 # run statistics
-sh $WORKFLOWS/process-openmedia-data/stat-openmedia-data
+sh $WORKFLOWS/process-openmedia-data/stat-openmedia-data.sh
 
 # commit logs
 pushd $LOGS_FOLDER
