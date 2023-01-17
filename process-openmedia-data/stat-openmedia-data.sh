@@ -22,7 +22,7 @@ function statYear () {
   for i in $ANNOVA/Rundowns/$1/*; do
     folder_stat=`statFolder $i $1`
     echo $i $folder_stat
-    echo "$folder_stat" > $filename
+    echo "$folder_stat" >> $filename
   done
 
 }
