@@ -32,3 +32,13 @@ We use [cron](https://crontab.guru/)!
 cd workflows && git pull && cd ..
 ```
 
+
+
+
+
+# m h  dom mon dow   command
+55 23 * * SUN /root/workflows/backup-respondent-db/run >> /root/backup.log 2>&1
+45 23 * * * /usr/bin/env bash -c 'cd /root/irozhlas-scraper-geneea-output && ./analyze_day_ago.sh' > /root/irozhlas-scraper-geneea-output/cronjob_log.txt 2>&1
+0 * * * * /usr/bin/env bash -c 'cd /root/irozhlas/irozhlas-scraper && source /root/irozhlas/irozhlas-scraper/.venv/bin/activate && irozhlas-scrape; deactivate' > /dev/null 2>&1
+0 5 * * MON /usr/bin/env bash -c 'cd /root/cro-rundown/ && source .venv/bin/activate && sh ../workflows/ManageRundownFiles/workflow' > /dev/null 2>&1
+0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; /bin/openmedia-check -i $ANNOVA -w >> /root/openmedia_check_log.json 2>&1'

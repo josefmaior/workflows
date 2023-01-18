@@ -4,7 +4,8 @@ source /root/.env
 
 
 #run openmedia-check /w changes to disk
-sh $WORKFLOWS/process-openmedia-data/openmedia-check.sh
+sh $WORKFLOWS_FOLDER/process-openmedia-data/openmedia-check.sh
+
 # commit logs
 pushd $LOGS_FOLDER
 git commit -am "`date` openmedia-check ran"
@@ -13,7 +14,7 @@ git push
 popd
 
 # run statistics
-sh $WORKFLOWS/process-openmedia-data/stat-openmedia-data.sh
+sh $WORKFLOWS_FOLDER/process-openmedia-data/stat-openmedia-data.sh
 
 # commit logs
 pushd $LOGS_FOLDER
