@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /root/.env
+. /root/.env
 
 
 #run openmedia-check /w changes to disk

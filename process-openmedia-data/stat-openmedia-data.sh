@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source /root/.env
+. /root/.env
 
 filename=$LOGS_FOLDER/process-openmedia-data/stat_openmedia_data_`date +%Y-%m-%d`.tsv
 
-function statFolder () {
+statFolder () {
 	if [ -d $1 ]; then
 	count=`ls $1 | wc | awk -F' ' '{print $1}'`
 	count_mon=`ls $1 | grep Mon | wc | awk -F' ' '{print $1}'`
@@ -18,7 +18,7 @@ function statFolder () {
 	fi
 }
 
-function statYear () {
+statYear() {
   for i in $ANNOVA/Rundowns/$1/*; do
     folder_stat=`statFolder $i $1`
     echo $i $folder_stat
