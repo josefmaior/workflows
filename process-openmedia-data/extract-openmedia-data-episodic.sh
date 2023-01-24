@@ -4,8 +4,14 @@
 # DESCRIPTION: Run the `cro-openmedia-extract` command.
 #
 
-YEAR=`date +%Y`
-WEEK=`date +%V`
+#YEAR=`date +%Y`
+YEAR=$1
+WEEK=$2
+
+if [[ $# -ne 2 ]]; then
+	echo "Invalid number of arguments, required: YYYY MM"
+	exit 1
+fi
 
 echo "The week ${YEAR}/${WEEK}."
 
@@ -21,7 +27,7 @@ pip install -U /root/bin/openmedia
 source /root/.env
 
 echo "Runing cro-openmedia-extract command."
-cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o /mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/${YEAR}
+cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o /root/work
 
 echo "Deactivating virtual environment."
 deactivate

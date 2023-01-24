@@ -1,6 +1,7 @@
 #!/bin/bash
 . /root/.env
 
-/bin/openmedia-check -i $ANNOVA -w >> $LOGS_FOLDER/process-openmedia-data/openmedia_check_`date +%Y-%m-%d`.json 2>&1
+filename=$LOGS_FOLDER/process-openmedia-data/openmedia_check_`date +%Y-%m-%d`.json
+/bin/openmedia-check -i $ANNOVA -w >> $filename 2>&1
 
 
