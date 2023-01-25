@@ -1,7 +1,3 @@
-
-# swamp cronjobs backup
-
-```
 # Edit this file to introduce tasks to be run by cron.
 # 
 # Each task to run has to be defined through a single line
@@ -36,7 +32,7 @@
 # 
 0 5 * * MON /usr/bin/env bash -c 'cd /root/cro-rundown/ && source .venv/bin/activate && sh ../workflows/ManageRundownFiles/workflow' > /dev/null 2>&1
 
-# Openmedia-check
-0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; /bin/openmedia-check -i $ANNOVA -w >> /root/openmedia_check_log.json 2>&1'
-```
+# Openmedia-arrange
+#0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; /bin/openmedia-check -i $ANNOVA -w >> /root/logs/process-openmedia-data/openmedia_check_log_`date +%Y-%m-%d`.json 2>&1'
+0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; sh /root/process-openmedia-data/run'
 
