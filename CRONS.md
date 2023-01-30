@@ -1,6 +1,6 @@
 # CRONS.md
 
-```
+```bash
 # Edit this file to introduce tasks to be run by cron.
 # 
 # Each task to run has to be defined through a single line
@@ -25,7 +25,7 @@
 # m h  dom mon dow   command
 
 # /workflows/backup-respondent-db/run Backups AuraDB
-55 23 * * SUN /root/workflows/backup-respondent-db/run >> /root/logs/backup-respondent-db/run_log_`date +%Y-%m-%d`.log 2>&1
+55 23 * * SUN /usr/bin/env bash -c 'sh /root/workflows/backup-respondent-db/run >> /root/logs/backup-respondent-db/run_log_`date +%Y-%m-%d`.log' 2>&1
 
 # Irozhlas scraper
 0 * * * * /usr/bin/env bash -c 'cd /root/irozhlas/irozhlas-scraper && source /root/irozhlas/irozhlas-scraper/.venv/bin/activate && irozhlas-scrape; deactivate' > /dev/null 2>&1
