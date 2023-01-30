@@ -34,5 +34,5 @@
 
 # Openmedia-arrange
 #0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; /bin/openmedia-check -i $ANNOVA -w >> /root/logs/process-openmedia-data/openmedia_check_log_`date +%Y-%m-%d`.json 2>&1'
-0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; sh /root/process-openmedia-data/run'
+0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; sh /root/workflows/process-openmedia-data/run'
 
