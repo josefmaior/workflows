@@ -16,7 +16,8 @@ fi
 echo "The week ${YEAR}/${WEEK}."
 
 echo "Pulling czech-radio/openmedia."
-git pull --rebase origin main
+#TODO: fixed version, tags
+#git pull --rebase origin main
 
 echo "Activating virtual environment."
 source /root/.venv/bin/activate

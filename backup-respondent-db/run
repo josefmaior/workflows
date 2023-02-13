@@ -6,7 +6,7 @@
 # .. note:: Source the .env file before running!
 #
 
-source /root/.env
+. /root/.env
 
 DATE=`date +%Y-%m-%d`
 
