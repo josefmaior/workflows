@@ -26,7 +26,7 @@
 55 23 * * SUN cronitor exec xxxxxx "/usr/bin/env bash -c 'sh /root/workflows/backup-respondent-db/run >> /root/logs/backup-respondent-db/run_log_`date +%Y-%m-%d`.log' 2>&1"
 
 # Irozhlas scraper
-#0 * * * * cronitor exec tSiCVL "/usr/bin/env bash -c 'cd /root/irozhlas/irozhlas-scraper && source /root/irozhlas/irozhlas-scraper/.venv/bin/activate && irozhlas-scrape; deactivate' > /dev/null 2>&1"
+#0 * * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'cd /root/irozhlas/irozhlas-scraper && source /root/irozhlas/irozhlas-scraper/.venv/bin/activate && irozhlas-scrape; deactivate' > /dev/null 2>&1"
 # Geneea analysis of Irozhlas data
 #45 23 * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'cd /root/irozhlas-scraper-geneea-output && ./analyze_day_ago.sh' > /root/irozhlas-scraper-geneea-output/cronjob_log.txt 2>&1"
 
