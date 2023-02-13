@@ -31,7 +31,8 @@
 #45 23 * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'cd /root/irozhlas-scraper-geneea-output && ./analyze_day_ago.sh' > /root/irozhlas-scraper-geneea-output/cronjob_log.txt 2>&1"
 
 # Irozhlas scraper
-0 * * * * cronitor exec tSiCVL "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run_scrape' > /dev/null 2>&1"
+0 * * * * cronitor exec xxxxxx
+ "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run_scrape' > /dev/null 2>&1"
 # Geneea analysis of Irozhlas data
 45 23 * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run' > /dev/null 2>&1"
 
