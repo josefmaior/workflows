@@ -15,6 +15,10 @@ Here you can find programs/scripts and documentation of automated business proce
  ![backup-respondent-db](https://cronitor.io/badges/oy5pxz/production/2ttm3rb3jG4mdDRyr5W40F5irLM.svg)
 
 
+## Logs
+
+For output of workflows see [logs](https://github.com/czech-radio/logs) repository.
+
 ## Creating workflow
  
 - Each workflow is placed in an appropriately named directory (Use the imperative e.g. `do-this`).
