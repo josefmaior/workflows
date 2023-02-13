@@ -1,7 +1,7 @@
 #!/bin/bash
 . /root/.env
 
-YEAR=`date +%y`
+YEAR=`date +%Y`
 WEEK=`date +%V`
 
 filename=$LOGS_FOLDER/process-openmedia-data/openmedia_minify_`date +%Y-%m-%d`.log
