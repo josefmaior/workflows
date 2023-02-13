@@ -21,3 +21,16 @@ git add .
 git commit -am "`date` stat-openmedia-data ran"
 git pull --rebase
 git push
+
+
+# run openmedia-minify
+sh $WORKFLOWS_FOLDER/process-openmedia-data/openmedia-minify.sh
+
+# commit logs
+cd $LOGS_FOLDER
+git add .
+git commit -am "`date` openmedia-minify ran"
+git pull --rebase
+git push
+
+
