@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. /root/.env
+
+# Irozhlas scraper
+cd /root/irozhlas/irozhlas-scraper
+. /root/irozhlas/irozhlas-scraper/.venv/bin/activate
+irozhlas-scrape > $LOGS/irozhlas-scrape_`date +%Y_%m_%d_%H_%M_%S`.log 2>&1
+deactivate
