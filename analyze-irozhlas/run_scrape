@@ -7,3 +7,10 @@ cd /root/irozhlas/irozhlas-scraper
 . /root/irozhlas/irozhlas-scraper/.venv/bin/activate
 irozhlas-scrape > $LOGS/irozhlas-scrape_`date +%Y_%m_%d_%H_%M_%S`.log 2>&1
 deactivate
+
+# commit logs
+cd $LOGS_FOLDER
+git add .
+git commit -am "`date` irozhlas-scrape ran"
+git pull --rebase
+git push
