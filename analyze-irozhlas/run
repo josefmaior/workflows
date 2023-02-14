@@ -3,8 +3,7 @@
 . /root/.env
 
 # run Geneea analysis
-sh $WORKFLOWS_FLODER/analyze-irozhlas/analyze_day_ago.sh > $LOGS_FOLDER/analyze-irozhlas/irozhlas-geneea_`date +%Y_%m_%d`.log 2>&1
-#!/bin/bash
+sh /root/workflows/analyze-irozhlas/analyze_day_ago.sh > $LOGS_FOLDER/analyze-irozhlas/irozhlas-geneea_`date +%Y_%m_%d`.log 2>&1
 
 # commit logs
 cd $LOGS_FOLDER
@@ -12,3 +11,5 @@ git add .
 git commit -am "`date` irozhlas-geneea-analysis ran"
 git pull --rebase
 git push
+
+

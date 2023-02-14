@@ -5,7 +5,7 @@ root_folder=`pwd`
 
 echo "Script init $TODAY from $root_folder"
 
-function dump_all_xmls_and_sort_by_entity_repeat_count () {
+function dump_all_xmls_and_sort_by_entity_repeat_count(){
 	cd $1
 	types=(organization person location general);
 	for ii in ${types[*]};
