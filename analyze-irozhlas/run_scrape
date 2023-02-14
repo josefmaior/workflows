@@ -10,9 +10,10 @@ cd /root/irozhlas/irozhlas-scraper
 irozhlas-scrape > /dev/null 2>&1
 deactivate
 
+# logging optional
 # commit logs
-cd $LOGS_FOLDER
-git add .
-git commit -am "`date` irozhlas-scrape ran"
-git pull --rebase
-git push
+#cd $LOGS_FOLDER
+#git add .
+#git commit -am "`date` irozhlas-scrape ran"
+#git pull --rebase
+#git push
