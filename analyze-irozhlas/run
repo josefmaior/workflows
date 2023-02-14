@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-. /root/.venv
+. /root/.env
 
 # run Geneea analysis
-sh $WORKFLOWS_FLODER/analyze-irozhlas/analyze_day_ago.sh > $LOGS/analyze-irozhlas/irozhlas-geneea_`date +%Y_%m_%d`.log 2>&1
+sh $WORKFLOWS_FLODER/analyze-irozhlas/analyze_day_ago.sh > $LOGS_FOLDER/analyze-irozhlas/irozhlas-geneea_`date +%Y_%m_%d`.log 2>&1
 #!/bin/bash
 
 # commit logs
