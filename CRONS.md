@@ -22,21 +22,17 @@
 #
 # m h  dom mon dow   command
 
+
+# backup-respondent-db/run
 # /workflows/backup-respondent-db/run Backups AuraDB
-55 23 * * SUN cronitor exec xxxxxx "/usr/bin/env bash -c 'sh /root/workflows/backup-respondent-db/run >> /root/logs/backup-respondent-db/run_log_`date +%Y-%m-%d`.log' 2>&1"
+55 23 * * SUN cronitor exec XXXXXX "/usr/bin/env bash -c 'sh /root/workflows/backup-respondent-db/run >> /root/logs/backup-respondent-db/run_log_`date +%Y-%m-%d`.log' 2>&1"
 
-# Irozhlas scraper
-#0 * * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'cd /root/irozhlas/irozhlas-scraper && source /root/irozhlas/irozhlas-scraper/.venv/bin/activate && irozhlas-scrape; deactivate' > /dev/null 2>&1"
-# Geneea analysis of Irozhlas data
-#45 23 * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'cd /root/irozhlas-scraper-geneea-output && ./analyze_day_ago.sh' > /root/irozhlas-scraper-geneea-output/cronjob_log.txt 2>&1"
+# irozhlas-analysis/run_scrape
+0 * * * * cronitor exec XXXXXX "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run_scrape' > /dev/null 2>&1"
+# irozhlas-analysis/run (Geneea analysis of Irozhlas data)
+45 23 * * * cronitor exec XXXXXX "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run' > /dev/null 2>&1"
 
-# Irozhlas scraper
-0 * * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run_scrape' > /dev/null 2>&1"
-# Geneea analysis of Irozhlas data
-45 23 * * * cronitor exec xxxxxx "/usr/bin/env bash -c 'sh /root/workflows/analyze-irozhlas/run' > /dev/null 2>&1"
-
-# Openmedia-arrange
-#0 1 * * MON /usr/bin/env bash -c 'export ANNOVA=/mnt/cro.cz/annova/export-avo; /bin/openmedia-check -i $ANNOVA -w >> /root/logs/process-openmedia-data/openmedia_check_log_`date +%Y-%m-%d`.json 2>&1'
-0 1 * * MON cronitor exec xxxxxx "/usr/bin/env bash -c 'sh /root/workflows/process-openmedia-data/run' > /dev/null 2>&1"
+# process-openmedia-data/run
+0 1 * * MON cronitor exec XXXXXX "/usr/bin/env bash -c 'sh /root/workflows/process-openmedia-data/run' > /dev/null 2>&1"
 
 ```
