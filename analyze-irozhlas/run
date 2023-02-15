@@ -12,4 +12,3 @@ git commit -am "`date` irozhlas-geneea-analysis ran"
 git pull --rebase
 git push
 
-

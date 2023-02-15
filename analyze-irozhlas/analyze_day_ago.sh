@@ -1,6 +1,7 @@
 #!/bin/bash
 
 TODAY=$(date +%Y-%m-%d)
+cd /root/irozhlas-scraper-geneea-output
 root_folder=`pwd`
 
 echo "Script init $TODAY from $root_folder"
