@@ -5,12 +5,13 @@
 #
 
 YEAR=`date +%Y`
-WEEK=`date +%V`
+# get last week
+WEEK=`date -d '-7 day' '+%V'`
 
 echo "The week ${YEAR}/${WEEK}."
 
-echo "Pulling czech-radio/openmedia."
-git pull --rebase origin main
+#echo "Pulling czech-radio/openmedia."
+#git pull --rebase origin main
 
 echo "Activating virtual environment."
 source /root/.venv/bin/activate
@@ -21,7 +22,8 @@ pip install -U /root/bin/openmedia
 source /root/.env
 
 echo "Runing cro-openmedia-extract command."
-cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o /mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Source/${YEAR}
+mkdir ${ANNOVA}/Temporary/Exports/${YEAR}/W${WEEK}
+cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o ${ANNOVA}/Temporary/Extracts/${YEAR}/W${WEEK}
 
 echo "Deactivating virtual environment."
 deactivate
