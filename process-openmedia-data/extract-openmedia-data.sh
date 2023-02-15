@@ -23,7 +23,7 @@ source /root/.env
 
 echo "Runing cro-openmedia-extract command."
 mkdir ${ANNOVA}/Temporary/Exports/${YEAR}/W${WEEK}
-cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o ${ANNOVA}/Temporary/Exports/${YEAR}/W${WEEK}
+cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o ${ANNOVA}/Temporary/Extracts/${YEAR}/W${WEEK}
 
 echo "Deactivating virtual environment."
 deactivate
