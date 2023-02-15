@@ -8,7 +8,7 @@
 
 . /root/.env
 
-DATE=`date +%Y-%m-%d`
+DATE=`date +%Y_%m_%d`
 
 pg_dump --file "/root/backups/aura_${DATE}.dump" \
 --host $AURA_DB_HOST \
@@ -16,5 +16,10 @@ pg_dump --file "/root/backups/aura_${DATE}.dump" \
 --username $AURA_DB_USER \
 --no-password --verbose --format=c --blobs --no-owner \
 --no-privileges $AURA_DB_NAME > /root/logs/backup-respondent-db/backup_db_ran_$DATE.log 2>&1
+
+cd /root/logs/backup-respondent-db/
+git add .
+git pull --rebase
+git commit -am "backup-respondent-db ran $DATE"
 
 #/usr/bin/pg_restore -U demodb --no-password -f "aura_$DATE.dump"
