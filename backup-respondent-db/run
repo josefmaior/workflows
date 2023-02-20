@@ -21,5 +21,6 @@ cd /root/logs/backup-respondent-db/
 git add .
 git pull --rebase
 git commit -am "backup-respondent-db ran $DATE"
+git push
 
 #/usr/bin/pg_restore -U demodb --no-password -f "aura_$DATE.dump"
