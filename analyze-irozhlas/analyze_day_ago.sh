@@ -6,7 +6,7 @@ root_folder=`pwd`
 
 echo "Script init $TODAY from $root_folder"
 
-function dump_all_xmls_and_sort_by_entity_repeat_count(){
+function dump_all_xmls_and_sort_by_entity_repeat_count {
 	cd $1
 	types=(organization person location general);
 	for ii in ${types[*]};
@@ -20,7 +20,7 @@ function dump_all_xmls_and_sort_by_entity_repeat_count(){
 	return 0
 }
 
-function run_graphing () {
+function run_graphing {
 	pidof Xvfb && echo "Xvfb already started" || Xvfb :99 &
 	export DISPLAY=:99
 	cd $1/graphEntities/ && /root/bin/pp
@@ -29,7 +29,7 @@ function run_graphing () {
 	return 0
 }
 
-function copy_and_commit_graphs_gh () {
+function copy_and_commit_graphs_gh {
 	cp $1/graphEntities/*.png $1/graphs
 	cd $1/graphs
 
@@ -42,7 +42,7 @@ function copy_and_commit_graphs_gh () {
 	return 0
 }
 
-function commit_data_gh () {
+function commit_data_gh {
 	cd /root/irozhlas-scraper-geneea-output
 	git add .
 	git commit -am "Automatic data update `date`"
@@ -53,7 +53,7 @@ function commit_data_gh () {
 	return 0
 }
 
-function run_batch_analysis_geneea () {
+function run_batch_analysis_geneea {
 	
 	source /root/irozhlas/cro-geneea-sdk2/.venv/bin/activate
 	source /root/irozhlas/cro-geneea-sdk2/secret
@@ -72,7 +72,7 @@ function run_batch_analysis_geneea () {
 	return 0
 }
 
-function move_results () {
+function move_results {
 	mkdir /root/irozhlas-scraper-geneea-output/txt/$1
 	mkdir /root/irozhlas-scraper-geneea-output/xml/$1
 	mkdir /root/irozhlas-scraper-geneea-output/html/$1
