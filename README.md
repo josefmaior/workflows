@@ -36,12 +36,12 @@ FIXME: The workflow testing strategy MUST be defined!
 ### Episodic (manual) execution
 
 ```bash
-sh workflows/backup-respondent-db/run
+./workflows/backup-respondent-db/run
 ```
 
 ### Periodic (automated) execution
 
-We use [cron](https://crontab.guru/)! 
+We use [cron](https://crontab.guru/) and [cronitor.io](https://cronitor.io) for monitoring them.
 
 ## How do we update the workflow on the server?
 
