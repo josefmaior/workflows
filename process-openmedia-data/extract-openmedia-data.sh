@@ -22,8 +22,10 @@ pip install -U /root/bin/openmedia
 source /root/.env
 
 echo "Runing cro-openmedia-extract command."
-mkdir ${ANNOVA}/Temporary/Exports/${YEAR}/W${WEEK}
-cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o ${ANNOVA}/Temporary/Extracts/${YEAR}/W${WEEK}
+mkdir ${ANNOVA}/Temporary/Extracts/${YEAR}/W${WEEK}
+#cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o ${ANNOVA}/Temporary/Extracts/${YEAR}/W${WEEK}
+## export primo na R disk
+cro-openmedia-extract -i ${ANNOVA}/Rundowns/${YEAR}/W${WEEK} -o /mnt/R/GŘ/Strategický\ rozvoj/Kancelář/Analytics/Analýzy/Data/2023
 
 echo "Deactivating virtual environment."
 deactivate
