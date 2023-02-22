@@ -7,15 +7,11 @@ Here you can find programs/scripts and documentation of automated business proce
 
 ## Jobs status
 
-### irozhlas-analyze
- ![irozhlas-scrape](https://cronitor.io/badges/tSiCVL/production/YGMJtPmnbrKvE7W0lgJmuhrwyoo.svg)
- ![irozhlas-analyze](https://cronitor.io/badges/OnC0Lc/production/8lS79WXuX67rBDGv3WTftFphZ-I.svg)
-
-### process-openmedia-data
- ![process-openmedia-data](https://cronitor.io/badges/7KMpaS/production/HyCIJSHMSn8aRcjiUx-LWAhf2wI.svg)
-
-### backup-respondent-db
- ![backup-respondent-db](https://cronitor.io/badges/oy5pxz/production/2ttm3rb3jG4mdDRyr5W40F5irLM.svg)
+| Name | Status |
+|------|--------|
+|irozhlas-analyze |![irozhlas-scrape](https://cronitor.io/badges/tSiCVL/production/YGMJtPmnbrKvE7W0lgJmuhrwyoo.svg) ![irozhlas-analyze](https://cronitor.io/badges/OnC0Lc/production/8lS79WXuX67rBDGv3WTftFphZ-I.svg) 
+| process-openmedia-data | ![process-openmedia-data](https://cronitor.io/badges/7KMpaS/production/HyCIJSHMSn8aRcjiUx-LWAhf2wI.svg)
+| backup-respondent-db | ![backup-respondent-db](https://cronitor.io/badges/oy5pxz/production/2ttm3rb3jG4mdDRyr5W40F5irLM.svg)
 
 ## Logs
 
