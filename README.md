@@ -1,9 +1,12 @@
 # Workflows
 
+**The configuration, management and documentation of organization's workflows.**
+
 Here you can find programs/scripts and documentation of automated business processes (workflows/pipelines), important for the running of the department. Each workflow can belong to one or more business processes, see our (knowledge base)(https://github.com/czech-radio/organization/tree/main/docs/Software/Processes).
 
 
 ## Jobs status
+
 ### irozhlas-analyze
  ![irozhlas-scrape](https://cronitor.io/badges/tSiCVL/production/YGMJtPmnbrKvE7W0lgJmuhrwyoo.svg)
  ![irozhlas-analyze](https://cronitor.io/badges/OnC0Lc/production/8lS79WXuX67rBDGv3WTftFphZ-I.svg)
@@ -13,7 +16,6 @@ Here you can find programs/scripts and documentation of automated business proce
 
 ### backup-respondent-db
  ![backup-respondent-db](https://cronitor.io/badges/oy5pxz/production/2ttm3rb3jG4mdDRyr5W40F5irLM.svg)
-
 
 ## Logs
 
