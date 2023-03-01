@@ -4,6 +4,8 @@
 # DESCRIPTION: Run the `cro-openmedia-extract` command.
 #
 
+. /root/.env
+
 YEAR=`date +%Y`
 # get last week
 WEEK=`date -d '-7 day' '+%V'`
