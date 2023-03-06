@@ -11,7 +11,7 @@ irozhlas-scrape > /dev/null 2>&1
 deactivate
 
 
-sh /root/workflows/scrape_publicistika.sh > /root/irozhlas-scraper-geneea-output/publicistika/irozhlas-publicistika-scrape_`date +%Y_%m_%d`.log 2>&1
+sh /root/workflows/analyze-irozhlas/scrape_publicistika.sh > /root/irozhlas-scraper-geneea-output/publicistika/irozhlas-publicistika-scrape_`date +%Y_%m_%d`.log 2>&1
 
 # logging optional
 # commit logs
@@ -20,3 +20,4 @@ git add .
 git commit -am "`date` irozhlas-publicistika-scrape ran"
 git pull --rebase
 git push
+
