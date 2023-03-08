@@ -12,5 +12,5 @@ scrape_factbox () {
   done
 }
 
-scrape_main
-scrape_factbox
+scrape_main || exit 1
+scrape_factbox || exit 1
