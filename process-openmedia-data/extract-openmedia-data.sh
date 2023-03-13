@@ -21,7 +21,7 @@ source /root/.venv/bin/activate
 echo "Updating czech-radio/openmedia."
 pip install -U /root/bin/openmedia
 
-source /root/.env
+. /root/.env
 
 echo "Runing cro-openmedia-extract command."
 mkdir ${ANNOVA}/Temporary/Extracts/${YEAR}/W${WEEK}
