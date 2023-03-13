@@ -1,27 +1,27 @@
 #!/bin/sh
 
-function scrape_main {
-  curl -s -L https://plus.rozhlas.cz/hlavni-zpravy-rozhovory-a-komentare-5997846 | grep "b-022__block" | grep href | grep publicistika | grep -v tag | awk -F'"' '{print "https://plus.rozhlas.cz"$8}' > /tmp/links.txt
+scrape_main(){
+  curl -s -L https://plus.rozhlas.cz/hlavni-zpravy-rozhovory-a-komentare-5997846 | grep "b-022__block" | grep href | grep publicistika | grep -v tag | awk -F'"' '{print "https://plus.rozhlas.cz"$8}' > /tmp/links.txt;
 
   for i in `cat /tmp/links.txt` ; do
     curl -s -L "$i" | grep "h1" | grep -v display | lynx --dump -assume_charset=utf-8 --display_charset=utf-8 -stdin  | grep -v "'' + '' +" ;
     curl -s -L "$i" | grep factbox | lynx --dump -assume_charset=utf-8 --display_charset=utf-8 -stdin  ;
-    printf "$i\n\n"
+    printf "$i\n\n";
   done
 }
 
-function scrape_pro_a_proti {
-  curl -s -L https://plus.rozhlas.cz/pro-a-proti-6482952 | grep "b-022__block" | grep -v tag |  awk -F'"' '{print "https://plus.rozhlas.cz"$8}' > /tmp/links.txt
-
+scrape_pro_a_proti(){
+  curl -s -L https://plus.rozhlas.cz/pro-a-proti-6482952 | grep "b-022__block" | grep -v tag |  awk -F'"' '{print "https://plus.rozhlas.cz"$8}' > /tmp/links.txt;
   for i in `cat /tmp/links.txt` ; do
     curl -s -L "$i" | lynx --dump -assume_charset=utf-8 --display_charset=utf-8 -stdin ; 
   done
 }
 
-function scrape_dvacet_min_rz {
+scrape_dvacet_min_rz(){
   curl -s -L https://plus.rozhlas.cz/dvacet-minut-radiozurnalu-5997743 | grep "b-022__block" | grep -v tag |  awk -F'"' '{print "https://plus.rozhlas.cz"$8}' > /tmp/links.txt
 }
-function scrape_interview_plus {
+
+scrape_interview_plus(){
   curl -s -L https://plus.rozhlas.cz/interview-plus-6504167 | grep "b-022__block" | grep -v tag |  awk -F'"' '{print "https://plus.rozhlas.cz"$8}' > /tmp/links.txt
 }
 
